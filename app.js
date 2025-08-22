@@ -1,0 +1,37 @@
+const express = require('express');
+const path = require('path');
+const { Pool } = require('pg');
+require('dotenv').config();
+
+const app = express();
+const port = process.env.PORT || 3000;
+
+// Static files
+app.use(express.static(path.join(__dirname, 'public')));
+
+// View engine setup (EJS)
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+
+// PostgreSQL pool
+const pool = new Pool({
+  user: process.env.DB_USER || 'postgres',
+  host: process.env.DB_HOST || 'localhost',
+  database: process.env.DB_NAME || 'shoponline',
+  password: process.env.DB_PASS || 'yourpassword',
+  port: process.env.DB_PORT || 5432,
+});
+
+// Example route
+app.get('/', async (req, res) => {
+  try {
+    const result = await pool.query('SELECT * FROM users');
+    res.render('index', { users: result.rows });
+  } catch (err) {
+    res.status(500).send('Database error');
+  }
+});
+
+app.listen(port, () => {
+  console.log(`App listening at http://localhost:${port}`);
+});
