@@ -22,7 +22,8 @@ const pool = new Pool({
   port: process.env.DB_PORT || 5432,
 });
 
-// Example route
+
+// Trang chủ
 app.get('/', async (req, res) => {
   try {
     const result = await pool.query('SELECT * FROM users');
@@ -30,6 +31,30 @@ app.get('/', async (req, res) => {
   } catch (err) {
     res.status(500).send('Database error');
   }
+});
+
+// Trang đăng nhập
+app.get('/login', (req, res) => {
+  res.render('login');
+});
+
+// Xử lý đăng nhập (demo, chưa xác thực thực tế)
+app.post('/login', express.urlencoded({ extended: true }), async (req, res) => {
+  const { username, password } = req.body;
+  // TODO: Thêm xác thực thực tế
+  res.send(`Đăng nhập với user: ${username}`);
+});
+
+// Trang đăng ký
+app.get('/register', (req, res) => {
+  res.render('register');
+});
+
+// Xử lý đăng ký (demo, chưa lưu vào DB)
+app.post('/register', express.urlencoded({ extended: true }), async (req, res) => {
+  const { username, email, password } = req.body;
+  // TODO: Thêm lưu user vào DB
+  res.send(`Đăng ký user: ${username}, email: ${email}`);
 });
 
 app.listen(port, () => {
