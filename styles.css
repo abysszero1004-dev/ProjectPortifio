@@ -96,7 +96,7 @@ header {
     transition: background 0.2s, color 0.2s;
 }
 .btn:hover {
-    background: #2d8cf0;
+    background: #74ace9;
     color: #fff;
 }
 
