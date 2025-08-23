@@ -9,6 +9,12 @@
 <body>
     <div class="form-container">
         <h2>Đăng ký</h2>
+        <% if (typeof message !== 'undefined' && message) { %>
+            <div style="color: <%= showLogin ? '#2d8cf0' : 'red' %>; margin-bottom: 1rem; font-weight: 500;">
+                <%= message %>
+            </div>
+        <% } %>
+        <% if (!showLogin) { %>
         <form action="/register" method="POST">
             <input type="text" name="username" placeholder="Tên đăng nhập" required>
             <input type="email" name="email" placeholder="Email" required>
@@ -16,6 +22,9 @@
             <button type="submit" class="btn">Đăng ký</button>
         </form>
         <p>Đã có tài khoản? <a href="/login">Đăng nhập</a></p>
+        <% } else { %>
+        <a href="/login" class="btn" style="display:inline-block; margin-top:1rem;">Đăng nhập ngay</a>
+        <% } %>
     </div>
 </body>
 </html>
