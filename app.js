@@ -23,39 +23,13 @@ const pool = new Pool({
 });
 
 
-// Trang chủ
-app.get('/', async (req, res) => {
-  try {
-    const result = await pool.query('SELECT * FROM users');
-    res.render('index', { users: result.rows });
-  } catch (err) {
-    res.status(500).send('Database error');
-  }
-});
 
-// Trang đăng nhập
-app.get('/login', (req, res) => {
-  res.render('login');
-});
+// Import routes
+const indexRoute = require('./routes/index')(pool);
+const authRoute = require('./routes/auth')(pool);
 
-// Xử lý đăng nhập (demo, chưa xác thực thực tế)
-app.post('/login', express.urlencoded({ extended: true }), async (req, res) => {
-  const { username, password } = req.body;
-  // TODO: Thêm xác thực thực tế
-  res.send(`Đăng nhập với user: ${username}`);
-});
-
-// Trang đăng ký
-app.get('/register', (req, res) => {
-  res.render('register');
-});
-
-// Xử lý đăng ký (demo, chưa lưu vào DB)
-app.post('/register', express.urlencoded({ extended: true }), async (req, res) => {
-  const { username, email, password } = req.body;
-  // TODO: Thêm lưu user vào DB
-  res.send(`Đăng ký user: ${username}, email: ${email}`);
-});
+app.use('/', indexRoute);
+app.use('/', authRoute);
 
 app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`);
