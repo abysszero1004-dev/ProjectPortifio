@@ -17,8 +17,8 @@ app.set('view engine', 'ejs');
 const pool = new Pool({
   user: process.env.DB_USER || 'postgres',
   host: process.env.DB_HOST || 'localhost',
-  database: process.env.DB_NAME || 'shoponline',
-  password: process.env.DB_PASS || 'yourpassword',
+  database: process.env.DB_NAME || 'project',
+  password: process.env.DB_PASS || '1',
   port: process.env.DB_PORT || 5432,
 });
 
