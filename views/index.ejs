@@ -4,28 +4,11 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>ShopOnline - Trang Bán Hàng</title>
-	<link rel="stylesheet" href="/styles.css">
+	<link rel="stylesheet" href="/css/global.css">
+	<link rel="stylesheet" href="/css/navbar.css">
 </head>
 <body>
-	<header>
-		<nav class="navbar">
-			<div class="logo">
-				<a href="/">ShopOnline</a>
-			</div>
-			<ul class="nav-links">
-				<li><a href="/">Trang Chủ</a></li>
-				<li><a href="#">Sản Phẩm</a></li>
-				<li><a href="#">Khuyến Mãi</a></li>
-				<li><a href="#">Giới Thiệu</a></li>
-				<li><a href="#">Liên Hệ</a></li>
-			</ul>
-			<div class="nav-icons">
-				<a href="#"><span>🔍</span></a>
-				<a href="#"><span>🛒</span></a>
-				   <a href="/login"><span>👤</span></a>
-			</div>
-		</nav>
-	</header>
+	<%- include('partials/nav') %>
 	<main>
 		<section class="hero">
 			<h1>Chào mừng đến với ShopOnline!</h1>

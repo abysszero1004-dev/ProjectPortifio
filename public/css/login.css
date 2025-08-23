@@ -1,0 +1,45 @@
+/* CSS riêng cho trang đăng nhập */
+.form-container {
+	max-width: 400px;
+	margin: 3rem auto;
+	background: #fff;
+	padding: 2rem 2.5rem 1.5rem 2.5rem;
+	border-radius: 18px;
+	box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+	text-align: center;
+}
+.form-container h2 {
+	margin-bottom: 1.5rem;
+	color: #2d8cf0;
+}
+.form-container input {
+	width: 100%;
+	padding: 0.7rem 1rem;
+	margin-bottom: 1.2rem;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	font-size: 1rem;
+	transition: border 0.2s;
+}
+.form-container input:focus {
+	border: 1.5px solid #2d8cf0;
+	outline: none;
+}
+.form-container .btn {
+	width: 100%;
+	margin-top: 0.5rem;
+}
+.form-container p {
+	margin-top: 1rem;
+	font-size: 0.98rem;
+}
+.message-success {
+	color: #2d8cf0;
+	margin-bottom: 1rem;
+	font-weight: 500;
+}
+.message-error {
+	color: red;
+	margin-bottom: 1rem;
+	font-weight: 500;
+}

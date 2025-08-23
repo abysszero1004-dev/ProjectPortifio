@@ -1,0 +1,17 @@
+/* CSS chung cho toàn bộ website */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f7f7f7;
+    color: #222;
+}
+footer {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 1.2rem 0;
+    margin-top: 2rem;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    border-radius: 24px 24px 0 0;
+}
