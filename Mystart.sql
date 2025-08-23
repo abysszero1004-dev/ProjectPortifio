@@ -163,3 +163,7 @@ Drop table if exists videos cascade;
 Drop table if exists video_comments cascade;
 Drop table if exists order_status cascade;
 Drop table if exists order_status_history cascade;
+Drop table if exists product_likes cascade;
+Drop table if exists comments cascade;
+Drop table if exists video_likes cascade;
+Drop table if exists video_comments cascade;
