@@ -43,10 +43,13 @@ exports.postRegister = async (req, res) => {
     if (check.rows.length > 0) {
       return res.render('register', { message: 'Tên đăng nhập hoặc email đã tồn tại!', showLogin: false });
     }
-    // Thêm user mới
-    await pool.query('INSERT INTO users (username, password, email) VALUES ($1, $2, $3)', [username, password, email]);
-    // Đăng ký thành công, render lại với thông báo và nút đăng nhập ngay
-    res.render('register', { message: 'Đăng ký thành công!', showLogin: true });
+  // Thêm user mới và lấy id
+  const insertUser = await pool.query('INSERT INTO users (username, password, email) VALUES ($1, $2, $3) RETURNING id', [username, password, email]);
+  const userId = insertUser.rows[0].id;
+  // Gán role mặc định (id=4) cho user mới
+  await pool.query('INSERT INTO user_roles (user_id, role_id) VALUES ($1, $2)', [userId, 4]);
+  // Đăng ký thành công, render lại với thông báo và nút đăng nhập ngay
+  res.render('register', { message: 'Đăng ký thành công!', showLogin: true });
   } catch (err) {
     console.error(err);
     res.status(500).render('register', { message: 'Lỗi đăng ký!', showLogin: false });
