@@ -1,3 +1,30 @@
+body.dark-mode {
+    background: #181a1b;
+    color: #e0e0e0;
+}
+body.dark-mode .navbar,
+body.dark-mode .form-container,
+body.dark-mode footer {
+    background: #23272a !important;
+    color: #e0e0e0 !important;
+}
+body.dark-mode .logo a,
+body.dark-mode .nav-links li a,
+body.dark-mode .nav-icons a {
+    color: #e0e0e0 !important;
+}
+body.dark-mode .nav-links li a:hover,
+body.dark-mode .nav-icons a:hover {
+    color: #2d8cf0 !important;
+}
+body.dark-mode .btn {
+    background: #2d8cf0;
+    color: #fff;
+}
+body.dark-mode .btn:hover {
+    background: #fff;
+    color: #2d8cf0;
+}
 /* CSS chung cho toàn bộ website */
 body {
     margin: 0;
