@@ -6,42 +6,148 @@
 	<title>ShopOnline - Trang Bán Hàng</title>
 	<link rel="stylesheet" href="/css/global.css">
 	<link rel="stylesheet" href="/css/navbar.css">
+	<link rel="stylesheet" href="/css/index.css">
 </head>
 <body>
 	<%- include('partials/nav') %>
-	<main>
-		<section class="hero">
-			<h1>Chào mừng đến với ShopOnline!</h1>
-			<p>Mua sắm dễ dàng, giao hàng tận nơi.</p>
-			<a href="#" class="btn">Mua Ngay</a>
-		</section>
-		<section class="products">
-			<h2>Sản phẩm nổi bật</h2>
-			<div class="product-list">
-				<!-- Demo sản phẩm, có thể render động bằng EJS nếu có dữ liệu -->
-				<div class="product-card">
-					<img src="https://via.placeholder.com/180x120" alt="Sản phẩm 1">
-					<h3>Sản phẩm 1</h3>
-					<p>Giá: 299.000đ</p>
-					<button class="btn">Thêm vào giỏ</button>
-				</div>
-				<div class="product-card">
-					<img src="https://via.placeholder.com/180x120" alt="Sản phẩm 2">
-					<h3>Sản phẩm 2</h3>
-					<p>Giá: 499.000đ</p>
-					<button class="btn">Thêm vào giỏ</button>
-				</div>
-				<div class="product-card">
-					<img src="https://via.placeholder.com/180x120" alt="Sản phẩm 3">
-					<h3>Sản phẩm 3</h3>
-					<p>Giá: 199.000đ</p>
-					<button class="btn">Thêm vào giỏ</button>
+	<!-- Hotline/Support bar -->
+	<div class="hotline-bar">
+		<span>Hotline: <a href="tel:0123456789">0123 456 789</a> | Hỗ trợ 24/7</span>
+	</div>
+	<!-- Hero Banner / Slider -->
+	<section class="hero-banner">
+		<div class="hero-content">
+			<h1>Ưu đãi lớn mùa hè!</h1>
+			<p>Giảm giá đến 50% cho hàng ngàn sản phẩm. Mua sắm ngay hôm nay!</p>
+			<a href="#products" class="btn">Mua ngay</a>
+		</div>
+		<div class="hero-img">
+			<img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=800&q=80" alt="Banner" />
+		</div>
+	</section>
+	<!-- Danh mục sản phẩm nổi bật -->
+	<section class="categories">
+		<h2>Danh mục nổi bật</h2>
+		<div class="category-list">
+			<a href="#"><img src="https://via.placeholder.com/100x100?text=Nam" alt="Nam"><span>Quần áo nam</span></a>
+			<a href="#"><img src="https://via.placeholder.com/100x100?text=Nữ" alt="Nữ"><span>Quần áo nữ</span></a>
+			<a href="#"><img src="https://via.placeholder.com/100x100?text=Giày" alt="Giày"><span>Giày dép</span></a>
+			<a href="#"><img src="https://via.placeholder.com/100x100?text=PK" alt="Phụ kiện"><span>Phụ kiện</span></a>
+		</div>
+	</section>
+	<!-- Sản phẩm nổi bật / mới / bán chạy -->
+	<section class="products" id="products">
+		<h2>Sản phẩm nổi bật</h2>
+		<div class="product-list">
+			<div class="product-card">
+				<img src="https://via.placeholder.com/180x120" alt="Sản phẩm 1">
+				<h3>Sản phẩm 1</h3>
+				<p>Giá: 299.000đ <span class="sale">-20%</span></p>
+				<button class="btn">Thêm vào giỏ</button>
+			</div>
+			<div class="product-card">
+				<img src="https://via.placeholder.com/180x120" alt="Sản phẩm 2">
+				<h3>Sản phẩm 2</h3>
+				<p>Giá: 499.000đ <span class="sale">-10%</span></p>
+				<button class="btn">Thêm vào giỏ</button>
+			</div>
+			<div class="product-card">
+				<img src="https://via.placeholder.com/180x120" alt="Sản phẩm 3">
+				<h3>Sản phẩm 3</h3>
+				<p>Giá: 199.000đ</p>
+				<button class="btn">Thêm vào giỏ</button>
+			</div>
+		</div>
+	</section>
+	<!-- Ưu điểm / cam kết của shop -->
+	<section class="shop-commit">
+		<div class="commit-list">
+			<div class="commit-item"><span>🚚</span> Miễn phí vận chuyển</div>
+			<div class="commit-item"><span>🔄</span> Đổi trả 7 ngày</div>
+			<div class="commit-item"><span>💬</span> Hỗ trợ 24/7</div>
+			<div class="commit-item"><span>🔒</span> Bảo mật thông tin</div>
+		</div>
+	</section>
+	<!-- Deal HOT / Flash sale -->
+	<section class="hot-deal">
+		<h2>Deal HOT hôm nay</h2>
+		<div class="deal-list">
+			<div class="deal-card">
+				<h3>Flash Sale</h3>
+				<p>Combo 3 áo thun chỉ 399.000đ</p>
+				<div class="countdown">00:12:34</div>
+				<button class="btn">Mua ngay</button>
+			</div>
+			<div class="deal-card">
+				<h3>Mã giảm giá</h3>
+				<p>Nhập <b>SUMMER25</b> giảm 25%</p>
+				<button class="btn">Sao chép mã</button>
+			</div>
+		</div>
+	</section>
+	<!-- Trust Content -->
+	<section class="trust-content">
+		<h2>Khách hàng nói gì về ShopOnline?</h2>
+		<div class="review-list">
+			<div class="review-item">
+				<p>"Shop giao hàng rất nhanh, sản phẩm chất lượng!"</p>
+				<span>- Minh Anh</span>
+			</div>
+			<div class="review-item">
+				<p>"Dịch vụ hỗ trợ tận tình, sẽ ủng hộ lâu dài."</p>
+				<span>- Quang Huy</span>
+			</div>
+		</div>
+		<div class="partner-logos">
+			<img src="https://via.placeholder.com/80x40?text=Bao+chi" alt="Báo chí">
+			<img src="https://via.placeholder.com/80x40?text=Đối+tác" alt="Đối tác">
+		</div>
+	</section>
+	<!-- Blog / Bài viết -->
+	<section class="blog">
+		<h2>Góc tư vấn & Blog</h2>
+		<div class="blog-list">
+			<div class="blog-card">
+				<img src="https://via.placeholder.com/120x80" alt="Blog 1">
+				<h3>Tips chọn quần áo mùa hè</h3>
+				<a href="#">Đọc tiếp</a>
+			</div>
+			<div class="blog-card">
+				<img src="https://via.placeholder.com/120x80" alt="Blog 2">
+				<h3>Phối đồ cá tính cho nam</h3>
+				<a href="#">Đọc tiếp</a>
+			</div>
+		</div>
+	</section>
+	<!-- Footer -->
+	<footer>
+		<div class="footer-content">
+			<div class="footer-col">
+				<h4>ShopOnline</h4>
+				<p>Địa chỉ: 123 Đường ABC, Quận 1, TP.HCM</p>
+				<p>Hotline: 0123 456 789</p>
+				<p>Email: support@shoponline.vn</p>
+			</div>
+			<div class="footer-col">
+				<h4>Chính sách</h4>
+				<ul>
+					<li><a href="#">Bảo hành</a></li>
+					<li><a href="#">Đổi trả</a></li>
+					<li><a href="#">Bảo mật</a></li>
+				</ul>
+			</div>
+			<div class="footer-col">
+				<h4>Kết nối</h4>
+				<div class="social-links">
+					<a href="#">Facebook</a> |
+					<a href="#">Instagram</a> |
+					<a href="#">Zalo</a>
 				</div>
 			</div>
-		</section>
-	</main>
-	<footer>
-		<p>&copy; 2025 ShopOnline. All rights reserved.</p>
+		</div>
+		<div class="copyright">
+			&copy; 2025 ShopOnline. All rights reserved.
+		</div>
 	</footer>
 </body>
 </html>
