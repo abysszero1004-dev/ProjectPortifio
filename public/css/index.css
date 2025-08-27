@@ -1,3 +1,193 @@
+/* Categories Section */
+.categories {
+    padding: 2.5rem 0 1.5rem 0;
+    text-align: center;
+}
+.categories h2 {
+    font-size: 1.7rem;
+    margin-bottom: 1.5rem;
+    color: #2d8cf0;
+    font-weight: 700;
+}
+.category-list {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+}
+.category-list a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #222;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(45,140,240,0.07);
+    padding: 1.2rem 1.5rem;
+    transition: box-shadow 0.2s, transform 0.2s, color 0.2s;
+    min-width: 120px;
+}
+.category-list a:hover {
+    box-shadow: 0 4px 24px rgba(45,140,240,0.13);
+    color: #2d8cf0;
+    transform: translateY(-4px) scale(1.04);
+}
+.category-list img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 0.7rem;
+    border: 2.5px solid #2d8cf0;
+    background: #f7f7f7;
+}
+.category-list span {
+    font-size: 1.08rem;
+    font-weight: 600;
+    margin-top: 0.2rem;
+}
+@media (max-width: 700px) {
+    .category-list {
+        gap: 1.1rem;
+    }
+    .category-list a {
+        padding: 0.7rem 0.5rem;
+        min-width: 90px;
+    }
+    .category-list img {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+/* Products Section */
+.products {
+    padding: 2.5rem 0 1.5rem 0;
+    text-align: center;
+}
+.products h2 {
+    font-size: 1.7rem;
+    margin-bottom: 1.5rem;
+    color: #2d8cf0;
+    font-weight: 700;
+}
+.product-list {
+    display: flex;
+    justify-content: center;
+    gap: 2.2rem;
+    flex-wrap: wrap;
+}
+.product-card {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 2px 16px rgba(45,140,240,0.08);
+    padding: 1.2rem 1.2rem 1.5rem 1.2rem;
+    min-width: 210px;
+    max-width: 240px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: box-shadow 0.2s, transform 0.2s;
+    position: relative;
+}
+.product-card:hover {
+    box-shadow: 0 6px 32px rgba(45,140,240,0.13);
+    transform: translateY(-4px) scale(1.03);
+}
+.product-card img {
+    width: 100%;
+    max-width: 180px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    background: #f7f7f7;
+}
+.product-card h3 {
+    font-size: 1.13rem;
+    font-weight: 600;
+    margin: 0.2rem 0 0.5rem 0;
+}
+.product-card p {
+    font-size: 1.08rem;
+    margin-bottom: 1.1rem;
+    color: #222;
+}
+.product-card .sale {
+    color: #e74c3c;
+    font-weight: 700;
+    margin-left: 0.5rem;
+}
+.product-card .btn {
+    width: 100%;
+    margin-top: auto;
+}
+@media (max-width: 900px) {
+    .product-list {
+        gap: 1.1rem;
+    }
+    .product-card {
+        min-width: 150px;
+        max-width: 98vw;
+        padding: 0.7rem 0.5rem 1rem 0.5rem;
+    }
+    .product-card img {
+        max-width: 90vw;
+        height: 90px;
+    }
+}
+
+/* Shop Commit Section */
+.shop-commit {
+    background: #f7f7f7;
+    padding: 2rem 0 1.5rem 0;
+    text-align: center;
+}
+.commit-list {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+}
+.commit-item {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(45,140,240,0.07);
+    padding: 1.1rem 2rem;
+    font-size: 1.08rem;
+    font-weight: 600;
+    color: #2d8cf0;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    min-width: 180px;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+.commit-item span {
+    font-size: 1.5rem;
+}
+.commit-item:hover {
+    box-shadow: 0 4px 24px rgba(45,140,240,0.13);
+    background: #eaf6ff;
+    color: #1a6dc1;
+    transform: translateY(-2px) scale(1.03);
+}
+@media (max-width: 700px) {
+    .commit-list {
+        gap: 1rem;
+    }
+    .commit-item {
+        padding: 0.7rem 0.7rem;
+        min-width: 120px;
+        font-size: 0.98rem;
+    }
+    .commit-item span {
+        font-size: 1.1rem;
+    }
+}
 /* Hero Banner */
 .hero-banner {
     display: flex;
