@@ -31,6 +31,10 @@ const authRoute = require('./routes/auth')(pool);
 app.use('/', indexRoute);
 app.use('/', authRoute);
 
+// Import and use productRoute after pool is initialized
+const productRoute = require('./routes/product')(pool);
+app.use('/', productRoute);
+
 app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`);
 });
